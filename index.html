@@ -7,6 +7,29 @@
     <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
+    <div class="form-container">
+
+        <form id="create-topic-form" style="">
+          <h3>Create a Topic!</h3>
+      
+          <input id='input-title' type="text" name="title" value="" placeholder="Enter your topic name..." class="input-text">
+          <br><br>
+          <textarea id='input-content' name="content" rows="8" cols="80" value="" placeholder="Enter your topic content..."></textarea>
+          <br><br>
+          <br><br>
+            <p>Choose A Topic</p>
+          <select id="categories" name="categories">
+            <option value="1">Verb</option>
+            <option value="2">Food</option>
+            <option value="3">Conversation</option>
+          </select>
+          <br><br>
+      
+          <input id= 'create-button' type="submit" name="submit" value="Create New Topic" class="submit">
+        </form>
+      
+      </div>
+
     <div id="topic-container">
 
     </div>
