@@ -1,4 +1,4 @@
-class Topic{
+class Topic {
 
    constructor (topic,topicAttributes) {
         this.id = topic.id
@@ -8,6 +8,20 @@ class Topic{
         Topic.all.push(this)
 }
 
+
+        renderTopicCard() {
+
+        return `
+                <div data-id=${this.id}>
+                  <h3>${this.title}</h3>
+                  <p>${this.category.name}</p>
+                  <p>${this.content}</p>
+                  <button data-id=${this.id}>edit</button>
+                </div>
+                <br><br>`;
+ }
+
 }
+    
 
 Topic.all = [];
