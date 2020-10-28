@@ -15,15 +15,10 @@ function getTopics() {
     .then(response => response.json())
     .then(topics =>{
        topics.data.forEach(topic =>{
-           const topicMarkup =
-           `<div data-id=${topic.id}>
-           <h3>${topic.attributes.title}</h3>
-           <p>${topic.attributes.content}</p>
-           <button data-id=${getTopics.id}>edit</button>
-           </div>
-           <br></br>`
 
-           document.querySelector('#topic-container').innerHTML += topicMarkup
+           let newTopic = new Topic(topic, topic.attributes)
+           document.querySelector('#topic-container').innerHTML += newTopic.renderTopicCard()
+
        }) 
     
     })
@@ -51,15 +46,7 @@ function getTopics() {
                   .then(topic => {
                     const topicData = topic.data.attributes
                     // render JSON response
-                    const topicMarkup = `
-                    <div data-id=${topic.id}>
-                      <h3>${topicData.title}</h3>
-                      <p>${topicData.category.name}</p>
-                      <button data-id=${topicData.id}>edit</button>
-                    </div>
-                    <br><br>`;
-
-                    document.querySelector('#topic-container').innerHtml += topicMarkup;
-
+                    let newTopic = new Topic(topic, topic.attributes)
+           document.querySelector('#topic-container').innerHTML += newTopic.renderTopicCard()
         })
     }
