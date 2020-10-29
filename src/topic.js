@@ -7,7 +7,7 @@ class Topic {
         this.category = topicAttributes.category
         Topic.all.push(this)
 }
-
+// is this working
 
         renderTopicCard() {
 
