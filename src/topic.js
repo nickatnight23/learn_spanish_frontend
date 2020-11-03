@@ -1,7 +1,7 @@
 class Topic {
 
    constructor (topic,topicAttributes) {
-        this.id = topic.id
+        this.id = topicAttributes.id
         this.title = topicAttributes.title
         this.content = topicAttributes.content
         this.category = topicAttributes.category
