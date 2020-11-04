@@ -1,0 +1,16 @@
+h3 {
+    color: rgb(255, 0, 0)
+}
+body{
+    background-image: url(https://3.bp.blogspot.com/-3hWMeZW3lvQ/WS9B29hB13I/AAAAAAAA7XA/FpN8yFzyo-AjX8wawIDQ_yWs4XpAqgqhgCLcB/s1600/set-mexican-traditional-cultural-elements-colorful-map-62142206.jpg);
+    background-size: 200px 100px;
+  background-repeat: no-repeat;
+  background-repeat: no-repeat, repeat;
+  height: 400px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; Resize the background image to cover the entire container
+}
+p {
+    color: green
+}
