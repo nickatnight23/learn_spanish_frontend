@@ -6,6 +6,7 @@
     <title>Document</title>
     <script type="text/javascript" src="src/index.js"></script>
     <script type="text/javascript" src="src/topic.js"></script>
+    <script type="text/javascript" src="src/category.js"></script>
     <link rel="stylesheet" href="src/css/style.css">
     <style>
       
@@ -14,6 +15,8 @@
 <body>
     <div class="form-container">
 
+
+        </div>
         <form id="create-topic-form" style="">
           <h3>Create a Topic!</h3>
       
@@ -32,10 +35,20 @@
           <br><br>
       
           <input id= 'create-button' type="submit" name="submit" value="Create New Topic" class="submit">
+          
         </form>
       
       </div>
-
+      <div class="search-container">
+        <h4>Category Search</h4>
+        <div id="searchWrapper">
+          <input
+          type="text"
+          name= "searchBar"
+          id= "searchBar"
+          placeholder="search category"
+          />
+        </div>
     <div id="topic-container">
 
     </div>
