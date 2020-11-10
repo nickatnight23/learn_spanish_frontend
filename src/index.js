@@ -6,39 +6,47 @@ document.addEventListener('DOMContentLoaded', () => {
     // const allCategories = getCategory()
     //debugger
 
-    const createTopicForm = document.querySelector("#create-topic-form")
-    const searchBar = document.getElementById('searchBar')
+    // const createTopicForm = document.querySelector("#create-topic-form")
+    // const searchBar = document.getElementById('searchBar')
 
-    searchBar.addEventListener('keyup', (e) => {
-        console.log(e.target.value)
-        const searchString = (e.target.value)
-        allCategories()
+    searchBar.addEventListener('input', (e) => {
+        e.preventDefault()
+        const searchString = e.target.value.toLowerCase()
+        let searchResult = filteredMyCategories.filter(filteredMycategory =>{
+            return filteredMycategory.name.toLowerCase().includes(term)
+    
 
-        
+        createMyCategoryCard(searchResult)
+
+    });
+})
+    const nameForm = document.querySelector('.search-box')
+    let filteredMyCategories = []
 
         function allCategories() {
             fetch(newPoint)
                 .then(response => response.json())
                 .then(myCategories => {
+                    
+                    createCategoryCard(myCategories)
+                    filteredMyCategories = myCategories
                 
 
-                    myCategories.filter(category => {
-                        console.log(category)
+                    // myCategories.filter(category => {
+                    //   return  category.name.includes(searchString)
                         
-                        if (category.name.includes(searchString)) { 
-                            return category.topics
-                        }
-                    })
-                
+                        // if (category.name.includes(searchString)) { 
+                        //     console.log(category.topics.name) 
+                        // }
 
 
                 })
-        }
+         
+            }
 
-
-    });
-    createTopicForm.addEventListener("submit", (e) =>
-        createFormHandler(e))
+    
+    createTopicForm.addEventListener("submit", (e) =>{
+        createFormHandler(e)
 
 
     //  const removeTopic
@@ -62,34 +70,34 @@ function getTopics() {
             document.querySelectorAll("#update-topic").forEach(topic => topic.addEventListener('click', editTopic))
 
         })
-}
-function editTopic(e) {
 
-    e.preventDefault()
-    const id = e.target.dataset.id
-    fetch(endPoint + `/${id}`)
-        .then(response => response.json())
-        .then(topic => {
-            const html =
-                `<input id='input-title' type="text" name="title" value=${topic.title}>
-                <br><br>
-                <br><br>
-                <textarea id='input-content' name="content" rows="8" cols="80" value=${topic.content}>
-                <br><br>
-                <br><br>
-                  <p>Choose A Topic</p>
-                <select id="categories" name="categories">
-                  <option value="1">Verb</option>
-                  <option value="2">Food</option>
-                  <option value="3">Conversation</option>
-                </select>
-                <br><br>
+// function editTopic(e) {
+
+//     e.preventDefault()
+//     const id = e.target.dataset.id
+//     fetch(endPoint + `/${id}`)
+//         .then(response => response.json())
+//         .then(topic => {
+//             const html =
+//                 `<input id='input-title' type="text" name="title" value=${topic.title}>
+//                 <br><br>
+//                 <br><br>
+//                 <textarea id='input-content' name="content" rows="8" cols="80" value=${topic.content}>
+//                 <br><br>
+//                 <br><br>
+//                   <p>Choose A Topic</p>
+//                 <select id="categories" name="categories">
+//                   <option value="1">Verb</option>
+//                   <option value="2">Food</option>
+//                   <option value="3">Conversation</option>
+//                 </select>
+//                 <br><br>
             
-                <input id= 'create-button' type="submit" name="submit" value="Create New Topic" class="submit">
-              </form>
-            `
-        })
-}
+//                 <input id= 'create-button' type="submit" name="submit" value="Create New Topic" class="submit">
+//               </form>
+//             `
+//         })
+// }
 
 function removeTopic(e) {
 
@@ -146,7 +154,6 @@ function postFetch(title, content, category_id) {
             const button = list[list.length - 1];
             button.addEventListener('click', removeTopic)
             //array = Array.from(list)
-            //    element.slice
-            //element.parentNode.removeChild(element);      
+        
         })
-}
+    })
