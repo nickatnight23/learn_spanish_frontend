@@ -6,6 +6,7 @@
     <title>Document</title>
     <script type="text/javascript" src="src/index.js"></script>
     <script type="text/javascript" src="src/topic.js"></script>
+    <script type="text/javascript" src="src/category.js"></script>
     <link rel="stylesheet" href="src/css/style.css">
     <style>
       
@@ -14,13 +15,15 @@
 <body>
     <div class="form-container">
 
+
+        </div>
         <form id="create-topic-form" style="">
           <h3>Create a Topic!</h3>
       
-          <input id='input-title' type="text" name="title" value="" placeholder="Enter your topic name..." class="input-text">
+          <input id='input-title' type="text" name="title" value="" placeholder="Enter your spanish topic" class="input-text">
           <br><br>
           <br><br>
-          <textarea id='input-content' name="content" rows="8" cols="80" value="" placeholder="Enter your topic content..."></textarea>
+          <textarea id='input-content' name="content" rows="8" cols="80" value="" placeholder="Enter your spanish word"></textarea>
           <br><br>
           <br><br>
             <p>Choose A Topic</p>
@@ -32,10 +35,18 @@
           <br><br>
       
           <input id= 'create-button' type="submit" name="submit" value="Create New Topic" class="submit">
+          
         </form>
       
       </div>
-
+      <br>
+      <form>
+        <div class=”search-box”>
+          <input type=”text” class=”search-by-category” name=”name” placeholder=”Search Category”>
+          <button class=”search-btn” type=”submit”>Search</button>
+         </div>
+      </form>
+      <br>
     <div id="topic-container">
 
     </div>
