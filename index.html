@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script type="text/javascript" src="src/index.js"></script>
+    <script type="text/javascript" src="src/index.js" charset="utf-8" defer></script>
     <script type="text/javascript" src="src/topic.js"></script>
     <script type="text/javascript" src="src/category.js"></script>
     <link rel="stylesheet" href="src/css/style.css">
@@ -40,12 +40,10 @@
       
       </div>
       <br>
-      <form>
-        <div class=”search-box”>
-          <input type=”text” class=”search-by-category” name=”name” placeholder=”Search Category”>
-          <button class=”search-btn” type=”submit”>Search</button>
-         </div>
-      </form>
+      <form id="searchbar">
+        <input type="text" value="" id="item-name"name="item-name"/>
+        <input type="submit" name="submit"/>
+    </form>
       <br>
     <div id="topic-container">
 

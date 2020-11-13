@@ -5,6 +5,7 @@ class Topic {
              this.title = topicAttributes.title
              this.content = topicAttributes.content
              this.category = topicAttributes.category
+
              Topic.all.push(this)
      }
         
