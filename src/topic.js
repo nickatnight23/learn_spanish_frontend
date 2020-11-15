@@ -17,7 +17,6 @@ class Topic {
                        <h3>${this.title}</h3>
                        <p>${this.category.name}</p>
                        <p>${this.content}</p>
-                       <button id = "update-topic" data-id=${this.id}>edit</button>
                        <button id ="delete" data-id=${this.id}>delete</button>
                      </div>
                      <br><br>`;
