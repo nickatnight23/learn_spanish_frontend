@@ -14,3 +14,13 @@ body{
 p {
     color: green
 }
+
+::placeholder {
+    color: blue;
+}
+
+
+#categories {
+    color: blue;
+}
+
