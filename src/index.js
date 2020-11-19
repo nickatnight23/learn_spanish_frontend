@@ -6,12 +6,21 @@ document.addEventListener('DOMContentLoaded', () => {
      const createTopicForm = document.querySelector("#create-topic-form")
 
      createTopicForm.addEventListener("submit",(e) => 
+
      createFormHandler(e))
      
     
     })
 
+  let btnClear = document.getElementById('create-button');
+  let inputContents = document.getElementById('input-content');
+  let inputTitle = document.getElementById('input-title');
 
+  function clearField(){
+      inputContents.value = "";
+      inputTitle.value = "";
+  }
+  btnClear.addEventListener("click",clearField, false)
 function getTopics() {
     fetch(endPoint)
     .then(response => response.json())
